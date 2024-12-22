@@ -11,6 +11,10 @@
 		const size = 700;
 		myCanvas.width = size;
 		myCanvas.height = size;
+
+		const ctx = myCanvas.getContext("2d");
+		const track = new Track(trackCenter, trackRadius);
+		track.draw(ctx);
 	</script>
 </body>
 </html>
