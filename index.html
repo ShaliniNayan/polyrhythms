@@ -15,11 +15,14 @@
 
 		const trackCenter = { x: size / 2, y: size / 2 };
 		const trackRadius = 100;
+		const ballRadius = 10;
+		const ballSpeed = 0.1;
 
 		const ctx = myCanvas.getContext("2d");
 		const track = new Track(trackCenter, trackRadius);
 		const ball = new Ball(track, ballRadius, ballSpeed);
 		track.draw(ctx);
+		ball.draw(ctx);
 	</script>
 </body>
 </html>
