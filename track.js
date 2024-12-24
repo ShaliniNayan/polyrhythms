@@ -5,17 +5,18 @@ class Track {
 	}
 
 	getPostion(offset) {
-		return { x: this.center.x + Math.cos(offset * 3) * this.radius, // *3 move the ball according to shape
+		return { x: this.center.x + Math.cos(offset) * this.radius, // *3 or *5  the ball according to shape
 				y: this.center.y - Math.sin(offset) * this.radius 
 			};
 	}
 
 	draw(ctx) {
 		ctx.beginPath();
-		for (let a = 0; a < Math.PI * 2; a += 0.1) {
-			ctx.lineTo(
-				this.center.x + Math.cos(a * 3) * this.radius, // *3 change the shape
-				this.center.y - Math.sin(a) * this.radius
+		for (let a = 0; a < Math.PI * 2; a += 0.01) {
+			const position = this.getPostion(a);
+			ctx.lineTo(position.x, position.y
+				// this.center.x + Math.cos(a * 3) * this.radius, // *3 change the shape
+				// this.center.y - Math.sin(a) * this.radius
 			);
 		}
 		ctx.closePath();
