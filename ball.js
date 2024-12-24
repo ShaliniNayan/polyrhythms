@@ -11,6 +11,11 @@ class Ball {
 		// this.dy = 0;
 		// this.updatePosition();
 	}
+
+	move() {
+		this.offset += this.speed;
+		this.center = this.track.getPostion(this.offset);
+	}
 	// updatePosition() {
 	// 	this.x = this.track.center.x + this.radius * Math.cos(this.offset);
 	// 	this.y = this.track.center.y + this.radius * Math.sin(this.offset);
