@@ -18,6 +18,7 @@ class Ball {
 		this.center = this.track.getPostion(this.offset);
 		if (this.center.y > this.track.center.y){
 			this.direction *= -1;
+			playSound();
 		}
 	}
 	// updatePosition() {
