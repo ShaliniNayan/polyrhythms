@@ -4,6 +4,7 @@ class Ball {
 		this.radius = radius;
 		this.speed = speed;
 		this.offset = 0;
+		this.direction = 1;
 		this.center = this.track.getPostion(this.offset);
 		// this.x = 0;
 		// this.y = 0;
@@ -13,8 +14,11 @@ class Ball {
 	}
 
 	move() {
-		this.offset += this.speed;
+		this.offset += this.speed * this.direction;
 		this.center = this.track.getPostion(this.offset);
+		if (this.center.y > this.track.center.y){
+			this.direction *= -1;
+		}
 	}
 	// updatePosition() {
 	// 	this.x = this.track.center.x + this.radius * Math.cos(this.offset);
