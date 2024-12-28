@@ -20,6 +20,15 @@
 		const ballRadius = 10;
 		const ballSpeed = 0.01; // Change the spped of the ball
 
+		// Multiple ball & Multiple track
+		const tracks = [];
+		const balls = [];
+		const N = 20; // Pair
+
+		for (let i = 0; i < N; i++) {
+			
+		}
+
 		const ctx = myCanvas.getContext("2d");
 		const track = new Track(trackCenter, trackRadius);
 		const ball = new Ball(track, ballRadius, ballSpeed);
