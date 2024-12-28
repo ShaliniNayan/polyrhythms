@@ -40,6 +40,9 @@
 
 		function animate() {
 			ctx.clearRect(0, 0, size, size);
+			tracks.forEach(track => track.draw(ctx));
+			balls.forEach(ball => ball.draw(ctx));
+			balls.forEach(ball => ball.move());
 			// track.draw(ctx);
 			// ball.move();
 			// ball.draw(ctx);
