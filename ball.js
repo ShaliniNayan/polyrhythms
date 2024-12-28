@@ -1,8 +1,9 @@
 class Ball {
-	constructor(track, radius, speed) {
+	constructor(track, radius, speed, soundFrequency) {
 		this.track = track;
 		this.radius = radius;
 		this.speed = speed;
+		this.soundFrequency = soundFrequency;
 		this.offset = 0;
 		this.direction = 1;
 		this.center = this.track.getPostion(this.offset);
@@ -18,7 +19,7 @@ class Ball {
 		this.center = this.track.getPostion(this.offset);
 		if (this.center.y > this.track.center.y){
 			this.direction *= -1;
-			playSound();
+			playSound(this.soundFrequency);
 		}
 	}
 	// updatePosition() {
