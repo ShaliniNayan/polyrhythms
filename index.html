@@ -19,7 +19,8 @@
 		const trackMinRadius = 100;
 		const trackStep = 15;
 		const ballRadius = 10;
-		const ballSpeed = 0.01; // Change the spped of the ball
+		const ballMinSpeed = 0.01; // Change the speed of the ball
+		const ballSpeedStep = -0.0001; // Change the speed of the ball
 
 		// Multiple ball & Multiple track
 		const tracks = [];
@@ -28,8 +29,9 @@
 
 		for (let i = 0; i < N; i++) {
 			const trackRadius = trackMinRadius + i * trackStep; // Change the radius of the track
-			const track = new Track(trackCenter, trackRadius);
-			const ball = new Ball(track, ballRadius, ballSpeed);
+			const ballSpeed = ballMinSpeed + i * ballSpeedStep; // Change the speed of the ball
+			const track = new Track(trackCenter, trackRadius); // Change the center of the track
+			const ball = new Ball(track, ballRadius, ballSpeed); // Change the radius of the ball
 			tracks.push(track);
 			balls.push(ball);
 		}
