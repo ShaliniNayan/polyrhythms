@@ -17,6 +17,7 @@
 
 		const trackCenter = { x: size / 2, y: size / 2 };
 		const trackMinRadius = 100;
+		const trackStep = 15;
 		const ballRadius = 10;
 		const ballSpeed = 0.01; // Change the spped of the ball
 
@@ -27,19 +28,21 @@
 
 		for (let i = 0; i < N; i++) {
 			const trackRadius = trackMinRadius + i * trackStep; // Change the radius of the track
+			const track = new Track(trackCenter, trackRadius);
+			const ball = new Ball(track, ballRadius, ballSpeed);
+			tracks.push(track);
+			balls.push(ball);
 		}
 
 		const ctx = myCanvas.getContext("2d");
-		const track = new Track(trackCenter, trackRadius);
-		const ball = new Ball(track, ballRadius, ballSpeed);
 
 		animate();
 
 		function animate() {
 			ctx.clearRect(0, 0, size, size);
-			track.draw(ctx);
-			ball.move();
-			ball.draw(ctx);
+			// track.draw(ctx);
+			// ball.move();
+			// ball.draw(ctx);
 			// ball.updatePosition();
 			// ball.draw(ctx);
 			requestAnimationFrame(animate);
