@@ -16,7 +16,7 @@
 		myCanvas.height = size;
 
 		const trackCenter = { x: size / 2, y: size / 2 };
-		const trackRadius = 100;
+		const trackMinRadius = 100;
 		const ballRadius = 10;
 		const ballSpeed = 0.01; // Change the spped of the ball
 
@@ -26,7 +26,7 @@
 		const N = 20; // Pair
 
 		for (let i = 0; i < N; i++) {
-			
+			const trackRadius = trackMinRadius + i * trackStep; // Change the radius of the track
 		}
 
 		const ctx = myCanvas.getContext("2d");
