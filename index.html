@@ -37,8 +37,9 @@
 		for (let i = 0; i < N; i++) {
 			const trackRadius = trackMinRadius + i * trackStep; // Change the radius of the track
 			const ballSpeed = ballMinSpeed + i * ballSpeedStep; // Change the speed of the ball
+			const ballSounFrequency = soundFrequencies[i];
 			const track = new Track(trackCenter, trackRadius); // Change the center of the track
-			const ball = new Ball(track, ballRadius, ballSpeed); // Change the radius of the ball
+			const ball = new Ball(track, ballRadius, ballSpeed, ballSounFrequency); // Change the radius of the ball
 			tracks.push(track);
 			balls.push(ball);
 		}
