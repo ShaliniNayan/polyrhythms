@@ -2,11 +2,13 @@ class Track {
 	constructor(center, radius) {
 		this.center = center;
 		this.radius = radius;
+		this.period = Math.PI;
 	}
 
 	getPostion(offset) {
 		return { x: this.center.x + Math.cos(offset) * this.radius, // *3 or *5  the ball according to shape
-				y: this.center.y - Math.sin(offset) * this.radius 
+				y: this.center.y - Math.sin(offset) * this.radius,
+				round: Math.floor(offset / this.period) // round
 			};
 	}
 
