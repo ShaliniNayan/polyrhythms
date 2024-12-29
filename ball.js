@@ -1,9 +1,10 @@
 class Ball {
-	constructor(track, radius, speed, soundFrequency) {
+	constructor(track, radius, speed, soundFrequency, hue) {
 		this.track = track;
 		this.radius = radius;
 		this.speed = speed;
 		this.soundFrequency = soundFrequency;
+		this.hue = hue; 
 		this.offset = 0;
 		this.round = 0;
 		this.direction = 1;
