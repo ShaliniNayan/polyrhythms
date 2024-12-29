@@ -1,7 +1,8 @@
 class Track {
-	constructor(center, radius) {
+	constructor(center, radius, hue) {
 		this.center = center;
 		this.radius = radius;
+		this.hue = hue;
 		this.period = Math.PI;
 	}
 
