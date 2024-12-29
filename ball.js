@@ -7,6 +7,7 @@ class Ball {
 		this.hue = hue; 
 		this.offset = 0;
 		this.round = 0;
+		this.progress = 0; // The progress of the ball
 		this.direction = 1;
 		this.center = this.track.getPostion(this.offset);
 		// this.x = 0;
@@ -20,6 +21,7 @@ class Ball {
 		this.offset += this.speed;
 		const res = this.track.getPostion(this.offset); // Get the position of the ball according to the track and the offset of the ball
 		this.center = { x: res.x, y: res.y }; // Update the position of the ball
+		this.progress = res.progress; // Update the progress of the ball
 		if (res.round != this.round) {
 			// this.direction *= -1;
 			playSound(this.soundFrequency);
