@@ -7,7 +7,7 @@ class Track {
 
 	getPostion(offset) {
 		return { x: this.center.x + Math.cos(offset) * this.radius, // *3 or *5  the ball according to shape
-				y: this.center.y - Math.sin(offset) * this.radius,
+				y: this.center.y - Math.abs(Math.sin(offset)) * this.radius, // this.center.y - Math.sin(offset) * this.radius and math.abs to change the shape,
 				round: Math.floor(offset / this.period) // round
 			};
 	}
