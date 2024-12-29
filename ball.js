@@ -16,11 +16,13 @@ class Ball {
 	}
 
 	move() {
-		this.offset += this.speed * this.direction;
-		this.center = this.track.getPostion(this.offset);
-		if (this.center.y > this.track.center.y){
-			this.direction *= -1;
+		this.offset += this.speed;
+		const res = this.track.getPostion(this.offset); // Get the position of the ball according to the track and the offset of the ball
+		this.center = { x: res.x, y: res.y }; // Update the position of the ball
+		if (res.round != this.round) {
+			// this.direction *= -1;
 			playSound(this.soundFrequency);
+			this.round = res.round;
 		}
 	}
 	// updatePosition() {
