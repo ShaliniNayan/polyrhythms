@@ -33,14 +33,17 @@ class Ball {
 	// 	this.offset += this.speed;
 	// } 
 	draw(ctx) {
-		const fakeY = 2 * this.track.center.y - this.center.y; // Draw the new semeratic of the ball
-		ctx.beginPath();
-		ctx.arc(this.center.x, this.center.y, this.radius, 0, 2 * Math.PI);
-		ctx.strokeStyle = "white";
-		ctx.stroke();
-		ctx.beginPath();
-		ctx.arc(this.center.x, fakeY, this.radius, 0, 2 * Math.PI);
-		ctx.strokeStyle = "white";
-		ctx.stroke();	
+		const fakeY = 2 * this.track.center.y - this.center.y; // 
+			if (fakeY > this.center.y) { // If the ball is above the track, then the ball is below the track
+			ctx.beginPath();
+			ctx.arc(this.center.x, this.center.y, this.radius, 0, 2 * Math.PI);
+			ctx.strokeStyle = "white";
+			ctx.stroke();
+		} else {
+			ctx.beginPath();
+			ctx.arc(this.center.x, fakeY, this.radius, 0, 2 * Math.PI);
+			ctx.strokeStyle = "white";
+			ctx.stroke();
+		}	
 	}
 }
