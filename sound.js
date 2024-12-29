@@ -7,7 +7,7 @@ function playSound(frequency = 440, duration = 1) {
 	envelope.connect(audioCtx.destination); // Connect the oscillator to the audio context destination (output)
 
 	envelope.gain.setValueAtTime(0, audioCtx.currentTime); // Set the initial volume to 0 (silent)
-	envelope.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 0.05); // Gradually increase the volume to 1 (full volume)
+	envelope.gain.linearRampToValueAtTime(0.05, audioCtx.currentTime + 0.05); // Gradually increase the volume to 1 (full volume)
 	envelope.gain.linearRampToValueAtTime(0, audioCtx.currentTime + duration); // Gradually decrease the volume to 0 (silent)
 
 	oscillator.frequency.setValueAtTime(frequency, audioCtx.currentTime); // Set the initial frequency = frequency; // Set the frequency of the oscillator (in Hz)
