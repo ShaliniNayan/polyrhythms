@@ -24,7 +24,7 @@ class Track {
 		}
 		ctx.closePath();
 		// ctx.arc(this.center.x, this.center.y, this.radius, 0, 2 * Math.PI);
-		ctx.strokeStyle = "white";
+		ctx.strokeStyle = `hsl(${this.hue}, 100%, 50%)`; // Change the color
 		ctx.stroke();
 	}
 }
