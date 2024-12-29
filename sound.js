@@ -1,6 +1,6 @@
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-function playSound(frequency = 440, duration = 1) {
+function playSound(frequency = 440, duration = 2) {
 	const oscillator = audioCtx.createOscillator();
 	const envelope = audioCtx.createGain(); // Create a gain node to control the volume
 	oscillator.connect(envelope); // Connect the oscillator to the audio context destination (output)
