@@ -42,7 +42,8 @@ class Ball {
 			ctx.arc(this.center.x, this.center.y, this.radius, 0, 2 * Math.PI);
 			ctx.lineWidth = 2; // Change the width of the ball
 			ctx.strokeStyle = "white";
-			ctx.fillStyle = `hsl(${this.hue}, 100%, 50%)`; // Change the color
+			const lightness = 100 - 50 * this.progress; // Change the color
+			ctx.fillStyle = `hsl(${this.hue}, 100%, ${lightness}%)`; // Change the color
 			ctx.fill();
 			ctx.stroke();
 	}
