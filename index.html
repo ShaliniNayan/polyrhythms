@@ -13,7 +13,7 @@
 	<script>
 		const size = 700;
 		myCanvas.width = size;
-		myCanvas.height = size; // Change the height of the canvas
+		myCanvas.height = size / 2; // Change the height of the canvas
 
 		const trackCenter = { x: size / 2, y: size / 2 };
 		const trackMinRadius = 50;	// Change the radius of the track
@@ -37,9 +37,10 @@
 		for (let i = 0; i < N; i++) {
 			const trackRadius = trackMinRadius + i * trackStep; // Change the radius of the track
 			const ballSpeed = ballMinSpeed + i * ballSpeedStep; // Change the speed of the ball
-			const ballSounFrequency = soundFrequencies[i];
-			const track = new Track(trackCenter, trackRadius); // Change the center of the track
-			const ball = new Ball(track, ballRadius, ballSpeed, ballSounFrequency); // Change the radius of the ball
+			const ballSounFrequency = soundFrequencies[i]; // Change the frequency of the sound
+			const hue = (i * 360) / N; // Change the hue
+			const track = new Track(trackCenter, trackRadius, hue); // Change the center of the track
+			const ball = new Ball(track, ballRadius, ballSpeed, ballSounFrequency, hue); // Change the radius of the ball
 			tracks.push(track);
 			balls.push(ball);
 		}
