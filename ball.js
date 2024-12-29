@@ -38,8 +38,10 @@ class Ball {
 		// 	if (fakeY > this.center.y) { // If the ball is above the track, then the ball is below the track
 			ctx.beginPath();
 			ctx.arc(this.center.x, this.center.y, this.radius, 0, 2 * Math.PI);
+			ctx.lineWidth = 2; // Change the width of the ball
 			ctx.strokeStyle = "white";
 			ctx.fillStyle = `hsl(${this.hue}, 100%, 50%)`; // Change the color
+			ctx.fill();
 			ctx.stroke();
 	}
 }
