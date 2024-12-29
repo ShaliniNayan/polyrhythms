@@ -5,6 +5,7 @@ class Ball {
 		this.speed = speed;
 		this.soundFrequency = soundFrequency;
 		this.offset = 0;
+		this.round = 0;
 		this.direction = 1;
 		this.center = this.track.getPostion(this.offset);
 		// this.x = 0;
